@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 import { View, TextInput, KeyboardAvoidingView, Pressable, StyleSheet, Text, SafeAreaView } from 'react-native';
-import Constants from "expo-constants";
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import { router } from 'expo-router'
 // import {  useFonts } from 'expo-font'
 
 
-const LoginScreen = () => {
+const index = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setLoggedIn(true);
-  };
 
   // fonts settings
   // const [fontsLoaded] = useFonts({
@@ -47,10 +43,12 @@ const LoginScreen = () => {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Pressable onPress={handleLogin}>
+      
+      <Pressable onPress={() => router.replace("/Success")}>
         <Text style={styles.btn}
         >Log in</Text>
       </Pressable>
+      
       </KeyboardAvoidingView> 
         <Footer />
       </View>
@@ -63,7 +61,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingTop: Constants.statusBarHeight,
   },
   header: {
     // fontFamily: 'Roboto', 
@@ -82,15 +79,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  welcomeText: {
-    fontSize: 35,
-    paddingVertical: 20,
-    marginTop: -50,
-    color: "#000",
-    textAlign: "center",
-    backgroundColor: "#EE996F",
-  },
-  
   inputBox: {
     borderColor: "#EDEFEE",
     backgroundColor: "#EDEFEE",
@@ -125,4 +113,4 @@ const styles = StyleSheet.create({
  
 });
 
-export default LoginScreen;
+export default index;

@@ -1,8 +1,8 @@
 
 import { View, TextInput, KeyboardAvoidingView, Pressable, StyleSheet, Text, SafeAreaView } from 'react-native';
 import Constants from "expo-constants";
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 
 
