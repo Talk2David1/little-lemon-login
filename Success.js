@@ -1,61 +1,26 @@
-import React, { useState } from 'react';
+
 import { View, TextInput, KeyboardAvoidingView, Pressable, StyleSheet, Text, SafeAreaView } from 'react-native';
 import Constants from "expo-constants";
 import Footer from './components/Footer';
 import Header from './components/Header';
-// import {  useFonts } from 'expo-font'
 
 
-const LoginScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
 
-  const handleLogin = () => {
-    setLoggedIn(true);
-  };
-
-  // fonts settings
-  // const [fontsLoaded] = useFonts({
-  //   'Roboto': require('./assets/fonts/Roboto-BoldItalic.ttf'),
-  // });
-
-  // if (!fontsLoaded) {
-  //   return null;
-  // }
+const Success = () => {
+  
 
 
   return (
-    <SafeAreaView  style={styles.container}>
-    <View style={styles.page}>
-    <Header />
-      <Text style={styles.header}>Welcome to Little Lemon</Text>
-     
-    <Text style={styles.text}>Login to continue</Text>
-    <KeyboardAvoidingView>             
-    <TextInput
-        style={styles.inputBox}
-        placeholder="test@meta.com"
-        value={email}
-        onChangeText={setEmail}
-      />
-          
-       <TextInput
-       style={styles.inputBox}
-        placeholder="......."
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      <Pressable onPress={handleLogin}>
-        <Text style={styles.btn}
-        >Log in</Text>
-      </Pressable>
-      </KeyboardAvoidingView> 
+    <SafeAreaView style={styles.container}>
+      <View style={styles.page}>
+        <Header />
+        <Text style={styles.header}>Welcome to Little Lemon</Text>
+
+        <Text style={styles.text}>You are logged in!</Text>
+
         <Footer />
       </View>
-
-      </SafeAreaView>
+    </SafeAreaView>
   );
 };
 
@@ -125,4 +90,4 @@ const styles = StyleSheet.create({
  
 });
 
-export default LoginScreen;
+export default Success;

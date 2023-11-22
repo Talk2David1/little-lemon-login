@@ -1,23 +1,24 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Footer = () => {
+const Header = () => {
   return (
     <View>
-      <Text style={styles.welcomeText}>All rights reserved by little Lemon 2022</Text>
-    </View>
+    <Text style={styles.welcomeText}>Little Lemon</Text>
+     </View>
   );
 };
 
 const styles = StyleSheet.create({
     welcomeText: {
-        fontSize: 15,
-        paddingVertical: 10,
-        marginTop: 90,
+        fontSize: 35,
+        paddingVertical: 32,
+        marginTop: -70,
         color: "#000",
         textAlign: "center",
         backgroundColor: "#EE996F",
       },
       
+      
 });
-export default Footer;
+export default Header;
