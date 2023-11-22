@@ -10,24 +10,20 @@ const index = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-
   // fonts settings
   // const [fontsLoaded] = useFonts({
   //   'Roboto': require('./assets/fonts/Roboto-BoldItalic.ttf'),
   // });
-
   // if (!fontsLoaded) {
   //   return null;
   // }
 
-
   return (
     <SafeAreaView  style={styles.container}>
-    <View style={styles.page}>
     <Header />
+    <View style={styles.page}>
       <Text style={styles.header}>Welcome to Little Lemon</Text>
-     
-    <Text style={styles.text}>Login to continue</Text>
+      <Text style={styles.text}>Login to continue</Text>
     <KeyboardAvoidingView>             
     <TextInput
         style={styles.inputBox}
@@ -46,6 +42,8 @@ const index = () => {
       
       <Pressable onPress={() => router.replace("/Success")}>
         <Text style={styles.btn}
+        accessible={true}
+        accessibilityLabel={"Login Button"}     
         >Log in</Text>
       </Pressable>
       
@@ -101,9 +99,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     padding: 5,
     borderWidth: 5,
-  },
-  btnDisabled: {
-    backgroundColor: "#f1f4f7",
   },
   text: {
     textAlign: "center",
