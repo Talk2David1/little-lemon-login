@@ -1,27 +1,18 @@
 import React, { useState } from 'react';
-import { View, TextInput, KeyboardAvoidingView, Pressable, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { View, Dimensions, TextInput, KeyboardAvoidingView, Pressable, StyleSheet, Text, SafeAreaView } from 'react-native';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { router } from 'expo-router'
-// import {  useFonts } from 'expo-font'
 
 
 const index = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // fonts settings
-  // const [fontsLoaded] = useFonts({
-  //   'Roboto': require('./assets/fonts/Roboto-BoldItalic.ttf'),
-  // });
-  // if (!fontsLoaded) {
-  //   return null;
-  // }
-
   return (
     <SafeAreaView  style={styles.container}>
-    <Header />
     <View style={styles.page}>
+    <Header />
       <Text style={styles.header}>Welcome to Little Lemon</Text>
       <Text style={styles.text}>Login to continue</Text>
     <KeyboardAvoidingView>             
@@ -55,15 +46,16 @@ const index = () => {
   );
 };
 
+const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
   },
   header: {
-    // fontFamily: 'Roboto', 
-    fontSize: 40,
-    paddingVertical: 40,
+    fontSize: 30,
+    paddingVertical: 10,
+    marginBottom: 25,
     color: "#EDEFEF",
     textAlign: "center",
   },
@@ -82,7 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#EDEFEE",
     alignSelf: "stretch",
     height: 50,
-    margin: 18,
+    margin: 10,
     borderWidth: 1,
     padding: 10,
     fontSize: 20,
@@ -90,22 +82,21 @@ const styles = StyleSheet.create({
   },
   btn: {
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 20,
     backgroundColor: "#EE996F",
     borderColor: "#EE996F",
     borderRadius: 40,
     alignSelf: "stretch",
-    marginHorizontal: 90,
-    marginBottom: 10,
-    padding: 5,
-    borderWidth: 5,
+    marginHorizontal: 95,
+    marginBottom: 25,
+    padding: 3,
+    borderWidth: 4,
   },
-  text: {
+ text: {
+    fontSize: Math.min(width, height) * 0.06,
+    color: "#F7F4F4",
     textAlign: "center",
-    fontSize: 25,
-    color: "#F7F4F4"
-  }
- 
+  }, 
 });
 
 export default index;

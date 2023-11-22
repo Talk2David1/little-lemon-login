@@ -20,9 +20,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    // fontFamily: 'Roboto',
     fontSize: 40,
-    paddingVertical: 0,
+    paddingVertical: 10,
     color: "#EDEFEF",
     textAlign: "center",
   },

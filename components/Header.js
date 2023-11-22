@@ -11,15 +11,15 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // height: 100,
     backgroundColor: '#EE996F',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    padding: 32,
+    padding: 20,
     alignSelf: "stretch",
+    marginTop: -20,
   },
   welcomeText: {
-    fontSize: 35,
+    fontSize: 32,
     color: "#000",    
   },
 });
