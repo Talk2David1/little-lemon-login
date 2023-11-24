@@ -1,16 +1,19 @@
-import { View, StyleSheet, Text, SafeAreaView } from "react-native";
+import {StatusBar, View, StyleSheet, Text, SafeAreaView } from "react-native";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const Success = () => {
   return (
-    <SafeAreaView style={styles.page}>
-      <Header />
-      <View style={styles.page}>
+    <SafeAreaView style={styles.container}>
+    <View style={styles.page}>
+    <StatusBar backgroundColor="#EE996F" barStyle="light-content" />
+    <Header />
+    <View style={styles.page}>
         <Text style={styles.header}>Welcome to Little Lemon</Text>
         <Text style={styles.text}>You are logged in!</Text>
         </View>
         <Footer />
+    </View>
     </SafeAreaView>
   );
 };
@@ -18,6 +21,7 @@ const Success = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop:StatusBar.currentHeight,
   },
   header: {
     fontSize: 40,

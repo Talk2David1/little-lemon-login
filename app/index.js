@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { View, Dimensions, TextInput, KeyboardAvoidingView, Pressable, StyleSheet, Text, SafeAreaView } from 'react-native';
+import { StatusBar, View, Dimensions, TextInput, KeyboardAvoidingView, Pressable, StyleSheet, Text, SafeAreaView } from 'react-native';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { router } from 'expo-router'
+import { router } from 'expo-router';
+// import * as Yup from 'yup';
+// import { Formik, Form, Field, ErrorMessage } from 'formik';
+
+
+// const validationSchema = Yup.object().shape({
+//   username: Yup.string().email('please enter valid email').required("Required"),
+//   password: Yup.string().required("Required")
+// })
 
 
 const index = () => {
@@ -12,6 +20,7 @@ const index = () => {
   return (
     <SafeAreaView  style={styles.container}>
     <View style={styles.page}>
+    <StatusBar backgroundColor="#EE996F" barStyle="light-content" />
     <Header />
       <Text style={styles.header}>Welcome to Little Lemon</Text>
       <Text style={styles.text}>Login to continue</Text>
@@ -51,6 +60,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingTop:StatusBar.currentHeight,
+    backgroundColor:StatusBar.setBackgroundColor('blue'),
   },
   header: {
     fontSize: 30,

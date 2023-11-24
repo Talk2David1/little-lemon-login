@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     padding: 20,
     alignSelf: "stretch",
-    marginTop: -20,
+    marginTop: -26,
   },
   welcomeText: {
     fontSize: 32,
